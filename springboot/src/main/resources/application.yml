@@ -1,0 +1,45 @@
+mybatis:
+  mapperLocations: classpath:/mapper/*.xml
+  type-aliases-package: com.boot.entity
+server:
+  port: 8080
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/disk?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    username: root
+    password: wzf327075
+  servlet:
+    multipart:
+      max-file-size: 3MB
+      max-request-size: 5000MB
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    lettuce:
+      pool:
+        max-active: 8
+        min-idle: 0
+        max-idle: 8
+
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+
+file:
+  uploadpath:
+    chunk: D:/disk/chunk
+    merge: D:/disk/merge
+  share:
+    basepath: http://localhost:70/#/addshare?groupid=
+
+alipay:
+  callback:
+    url: http://fuwenyun.nat300.top/user/call/
+
